@@ -10,12 +10,12 @@ subroutine simpleIteration(n, A, b, x, max_iter, eps)
 	do i = -1, n + 2
 		do j = -1, n + 2
 			if (i /= j) then
-				alpha(i,j) = -A(i,j) / (A(i,i) + 1e5)
+				alpha(i,j) = -A(i,j) / (A(i,i) + 1e-1)
 			else
 				alpha(i,j) = 0.0
 			end if
 		end do
-		beta(i) = b(i) / (A(i,i) + 1e5)
+		beta(i) = b(i) / (A(i,i) + 1e-1)
 	end do
 
 	x = b
